@@ -1,0 +1,36 @@
+.links {
+    color: white;
+    background-color: lightsteelblue;
+    border-radius: 8px;
+    margin: 20px 10px 20px 0;
+
+}
+
+.navbar {
+    justify-content: space-between;
+}
+
+.navbar {
+    padding: 20px;
+    align-items: center;
+    display: flex;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.navbar h1 {
+    color: cornflowerblue;
+}
+
+.navbar .links {
+    margin-left: auto;
+}
+
+.navbar a {
+    margin-left: 16px;
+    padding: 6px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #333333;
+}
