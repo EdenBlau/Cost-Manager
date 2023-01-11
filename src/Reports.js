@@ -1,8 +1,10 @@
 import React from 'react';
 
-function Reports(props) {
+function Reports() {
     return (
-        <div></div>
+        <div>
+            <h1>This is Reports!</h1>
+        </div>
     );
 }
 
