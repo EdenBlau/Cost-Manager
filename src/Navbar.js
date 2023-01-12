@@ -1,14 +1,18 @@
 import React from 'react';
 import './Navbar.css';
+import AppLogo from './AppLogo.JPG';
+
 const Navbar = () => {
     return (
         <nav className="navbar">
-            <h1>Cost Manager</h1>
+            <a className="backHome" href="/">
+                <img className={"logo"} src={AppLogo} alt={"logo"}/>
+            </a>
 
             <div className="links_container">
-                <a className="links" href="/" >Home</a>
-                <a className="links" href="/create" >About</a>
-                <a className="links" href="/create2">Reports</a>
+                <a className="links" href="/">Home</a>
+                <a className="links" href="/about">About</a>
+                <a className="links" href="/reports">Reports</a>
             </div>
         </nav>
     );
