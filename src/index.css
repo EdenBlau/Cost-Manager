@@ -4,9 +4,7 @@
     margin: 0;
     font-family: "Quicksand";
     color: #333;
-
 }
-
 
 .content {
 
@@ -16,11 +14,8 @@
     padding: 80px 120px 100px 80px;
     display: flex;
     text-align: left;
-    border: 1px solid gray;
+    border: 5px solid gray;
     border-radius: 25px;
+    font-size: 22px;
 
 }
-
-
-
-

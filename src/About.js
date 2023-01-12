@@ -1,9 +1,17 @@
 import React from 'react';
 
-function About(props) {
-    return (
-        <div></div>
-    );
-}
 
-export default About;
+const About  = () => {
+return(
+    <div>
+        <h1>
+            Project Owners:
+
+        </h1>
+        <p>Eden
+            Peleg
+            Dudi</p>
+    </div>
+)
+}
+export default About
