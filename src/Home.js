@@ -16,7 +16,7 @@ const Home = () => {
     const [date, setDate] = useState('');
     const [item, setItem] = useState('');
     const [price, setPrice] = useState('');
-    const [category, setCategory] = useState('food');
+    const [category, setCategory] = useState('');
     const [description, setDescription] = useState('');
     const [inputs, setInputs] = useState([]);
     const [error, setError] = useState('');
@@ -63,7 +63,7 @@ const Home = () => {
                 </div>
 
                 <div className="submit">
-                    <button id="plus" onClick={() => {
+                    <button className={"add-cost"} id="plus" onClick={() => {
                         if (!date || !item || !price) {
                             alert("please enter all field")
                             return;
@@ -86,7 +86,7 @@ const Home = () => {
                     <th>Price</th>
                     <th>Category</th>
                     <th>Description</th>
-                    <th></th>
+                    <th>Delete item</th>
                 </tr>
                 </thead>
                 <tbody>
