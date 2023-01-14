@@ -80,3 +80,34 @@ button:hover {
 button:active {
     transform: translateY(-1px);
 }
+
+.Home li {
+    list-style: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+}
+.Home li button {
+    float: right;
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #ff0000;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.list-item {
+    list-style: none;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-item span {
+    font-weight: bold;
+}
