@@ -19,6 +19,7 @@ const Home = () => {
     const [category, setCategory] = useState('food');
     const [description, setDescription] = useState('');
     const [inputs, setInputs] = useState([]);
+    const [error, setError] = useState('');
 
 
 
@@ -30,7 +31,7 @@ const Home = () => {
 
                 <div className="inputGroup">
                     <label htmlFor='name'>Date</label>
-                    <input type="date" value={date} onChange={e=>setDate(e.target.value)} required="" autoComplete={'off'}/>
+                    <input type="date" value={date} onChange={e=>setDate(e.target.value)} required autoComplete={'off'}/>
                 </div>
 
                 <div className="inputGroup">
@@ -62,25 +63,56 @@ const Home = () => {
                 </div>
 
                 <div className="submit">
-                    <button id="plus" onClick={()=>{
-                        setInputs([...inputs,{date,item,price,category,description}]);
-                        localStorage.setItem('inputs', JSON.stringify([...inputs,{date,item,price,category,description}]));
+                    <button id="plus" onClick={() => {
+                        if (!date || !item || !price) {
+                            alert("please enter all field")
+                            return;
+                        }
+                        setError('');
+                        setInputs([...inputs, { date, item, price, category, description }]);
+                        localStorage.setItem('inputs', JSON.stringify([...inputs, { date, item, price, category, description }]));
                     }}>Add cost</button>
+                    {error && <p className="error">{error}</p>}
                 </div>
 
             </div>
 
             {/*The component then maps over the items in the inputs state variable and displays them in a list*/}
-            {inputs.map((input, index) => (
-                <li className={'list-item'} key={index}>
-                    Date: {input.date} Item: {input.item} Price: {input.price} Category: {input.category} Description: {input.description}
-                    <button onClick={()=>{
-                        inputs.splice(index, 1);
-                        setInputs([...inputs]);
-                        localStorage.setItem('inputs', JSON.stringify(inputs));
-                    }}>Delete</button>
-                </li>
-            ))}
+            <table>
+                <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                {inputs.map((input, index) => (
+                    <tr key={index}>
+                        <td>{input.date}</td>
+                        <td>{input.item}</td>
+                        <td>{input.price}</td>
+                        <td>{input.category}</td>
+                        <td>{input.description}</td>
+                        <td>
+                            <button
+                                className={'delete-button'}
+                                onClick={() => {
+                                    inputs.splice(index, 1);
+                                    setInputs([...inputs]);
+                                    localStorage.setItem('inputs', JSON.stringify(inputs));
+                                }}
+                            >
+                                Delete
+                            </button>
+                        </td>
+                    </tr>
+                ))}
+                </tbody>
+            </table>
 
         </div>
 
