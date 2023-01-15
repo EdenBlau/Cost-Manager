@@ -42,7 +42,7 @@ const Home = () => {
                 </div>
 
                 <div className="inputGroup">
-                    <label>Price: </label><input type="text" pattern={"[0-9]*"} inputMode={"numeric"} value={price} onChange={e=>setPrice(e.target.value)}/>
+                    <label>Price: </label><input type="number" value={price} onChange={e=>setPrice(e.target.value)}/>
                 </div>
 
                 <div className="inputGroup">
@@ -62,7 +62,8 @@ const Home = () => {
                 </div>
 
                 <div className="inputGroup">
-                    <label>Description: </label><textarea value={description} onChange={e=>setDescription(e.target.value)} placeholder="Enter description"></textarea>
+                    <label>Description: </label>
+                    <textarea value={description} onChange={e=>setDescription(e.target.value)} placeholder="Enter description"></textarea>
                 </div>
 
                 <div className="submit">

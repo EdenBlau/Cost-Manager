@@ -87,6 +87,7 @@ table {
     border-collapse: collapse; /* remove the cell spacing */
     margin: 20px; /* add margin around the table */
     font-family: Arial, Helvetica, sans-serif; /* choose a font */
+    white-space: pre-wrap;
 }
 th{
     background-color: rgba(4, 28, 65, 0.3);
@@ -124,3 +125,7 @@ tr:hover {
 }
 
 
+textarea{
+    resize: none;
+    height: 50px;
+}
