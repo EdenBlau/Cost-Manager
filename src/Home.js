@@ -2,9 +2,7 @@ import React from 'react';
 import './Home.css';
 import { useState ,useEffect} from 'react';
 
-
 const Home = () => {
-
 
     useEffect(() => {
         const inputsFromLocalStorage = JSON.parse(localStorage.getItem('inputs'));
@@ -39,7 +37,7 @@ const Home = () => {
                 </div>
 
                 <div className="inputGroup">
-                    <label>Price: </label><input type="text" value={price} onChange={e=>setPrice(e.target.value)}/>
+                    <label>Price: </label><input type="number" value={price} onChange={e=>setPrice(e.target.value)}/>
                 </div>
 
                 <div className="inputGroup">
@@ -59,13 +57,14 @@ const Home = () => {
                 </div>
 
                 <div className="inputGroup">
-                    <label>Description: </label><textarea value={description} onChange={e=>setDescription(e.target.value)} placeholder="Enter description"></textarea>
+                    <label>Description: </label>
+                    <textarea value={description} onChange={e=>setDescription(e.target.value)} placeholder="Enter description"></textarea>
                 </div>
 
                 <div className="submit">
                     <button id="plus" onClick={() => {
                         if (!date || !item || !price) {
-                            alert("please enter all field")
+                            alert("Please enter all field")
                             return;
                         }
                         setError('');

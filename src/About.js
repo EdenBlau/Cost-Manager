@@ -1,12 +1,15 @@
 import React from 'react';
 import './About.css'
+
 const About = () => {
     return (
+
         <div className="aboutclass">
             <h1>About Our App</h1>
             <p>Our app is a platform that connects users with local events and activities. It allows users to search for events based on location, date, and category, and also allows them to RSVP to events and receive updates on any changes. </p>
             <h2>Meet Our Team</h2>
             <h3>Team Member 1</h3>
+
             <p>Name: Peleg Vadbeker</p>
             <p>Role: Computer Science student - HIT </p>
             <p>Bio: John is a experienced software developer with a background in event management. He is passionate about using technology to connect people with their communities and make it easier to discover new experiences.</p>
@@ -21,5 +24,4 @@ const About = () => {
         </div>
     );
 }
-
 export default About;
