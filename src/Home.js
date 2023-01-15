@@ -21,17 +21,20 @@ const Home = () => {
     const [inputs, setInputs] = useState([]);
     const [error, setError] = useState('');
 
+    const today = new Date();
+    const todayStr = today.toISOString().slice(0, 10);
+
 
 
     return (
         <div className="Home">
-            <h1>Add your expanse here</h1>
+            <h1>Add your expense here</h1>
             <div className="form-container">
 
 
                 <div className="inputGroup">
                     <label htmlFor='name'>Date</label>
-                    <input type="date" value={date} onChange={e=>setDate(e.target.value)} required autoComplete={'off'}/>
+                    <input type="date" value={date} onChange={e=>setDate(e.target.value)} required autoComplete={'off'} max={todayStr}/>
                 </div>
 
                 <div className="inputGroup">
@@ -39,7 +42,7 @@ const Home = () => {
                 </div>
 
                 <div className="inputGroup">
-                    <label>Price: </label><input type="text" value={price} onChange={e=>setPrice(e.target.value)}/>
+                    <label>Price: </label><input type="text" pattern={"[0-9]*"} inputMode={"numeric"} value={price} onChange={e=>setPrice(e.target.value)}/>
                 </div>
 
                 <div className="inputGroup">
@@ -71,11 +74,17 @@ const Home = () => {
                         setError('');
                         setInputs([...inputs, { date, item, price, category, description }]);
                         localStorage.setItem('inputs', JSON.stringify([...inputs, { date, item, price, category, description }]));
+                        setDate(''); // Clear the date input
+                        setItem(''); // Clear the item input
+                        setPrice(''); // Clear the price input
+                        setCategory('food'); // Reset the category to default
+                        setDescription(''); // Clear the description input
                     }}>Add cost</button>
                     {error && <p className="error">{error}</p>}
                 </div>
 
             </div>
+
 
             {/*The component then maps over the items in the inputs state variable and displays them in a list*/}
             <table>
@@ -113,6 +122,7 @@ const Home = () => {
                 ))}
                 </tbody>
             </table>
+
 
         </div>
 

@@ -1,5 +1,41 @@
-
-
-p{
-    font-size:20px;
+.about-us-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
+.about-us-text {
+    text-align: center;
+}
+
+.team-members-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.team-member-card {
+    width: 30%;
+    height: auto;
+    max-width: 100%;
+    padding: 1rem;
+
+
+}
+
+.team-member-card h3,
+.team-member-card p {
+    text-align: center;
+}
+
+.team-member-card img {
+    max-width: 50%;
+    height: auto;
+    object-fit: contain;
+
+
+}
+
