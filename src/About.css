@@ -3,7 +3,17 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin: 10px auto;
 }
+
+.about-us-container h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-top: 2rem;
+    border-bottom: 1px solid #000;
+    border-radius: 5px;
+}
+
 .about-us-text {
     text-align: center;
 }
@@ -18,10 +28,10 @@
 }
 
 .team-member-card {
-    width: 30%;
     height: auto;
-    max-width: 100%;
+    max-width: 20%;
     padding: 1rem;
+    justify-items: center;
 
 
 }
@@ -32,9 +42,10 @@
 }
 
 .team-member-card img {
-    max-width: 50%;
+    max-width: 100%;
     height: auto;
-    object-fit: contain;
+    object-fit: cover;
+    aspect-ratio: 1/1;
 
 
 }

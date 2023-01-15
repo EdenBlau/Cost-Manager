@@ -7,7 +7,7 @@ import dudi from './dudi.jpeg'
 const teamMembers = [
     {
         name: 'Peleg Vadbeker',
-        role: 'Computer Science student',
+        role: 'Computer Science student and the team leader of this project',
         picture: peleg
     },
     {
