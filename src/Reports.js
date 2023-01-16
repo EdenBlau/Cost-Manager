@@ -5,6 +5,7 @@ const Reports = () => {
     const [selectedMonth, setSelectedMonth] = useState('');
     const [expenses, setExpenses] = useState([]);
     const [totalExpenses, setTotalExpenses] = useState(0);
+    const [filteredExpenses,setFilteredExpenses]=useState([])
 
     // Fetch the expenses from local storage
     useEffect(() => {
@@ -14,17 +15,25 @@ const Reports = () => {
         }
     }, []);
 
-    // Filter the expenses by the selected year and month
-    const filteredExpenses = expenses.filter(expense => {
-        const expenseDate = new Date(expense.date);
-        return expenseDate.getFullYear() === selectedYear && expenseDate.getMonth() === selectedMonth;
-    });
+    useEffect(()=>{
+        console.log("change",expenses)
+    },[expenses])
+
+    // // Filter the expenses by the selected year and month
+    // const filteredExpenses = expenses.filter(expense => {
+    //     const expenseDate = new Date(expense.date);
+    //     return expenseDate.getFullYear() === selectedYear && expenseDate.getMonth() === selectedMonth;
+    // });
 
     // Calculate the total expenses for the filtered expenses
     const calculateTotalExpenses = () => {
         let total = 0;
+        const filtered = expenses.filter(exp=>new Date(exp.date).getFullYear().toString()===selectedYear&&new Date(exp.date).getMonth().toString()===selectedMonth);
+        console.log("filtered",filtered);
+        setFilteredExpenses(filtered);
+
         filteredExpenses.forEach(expense => {
-            total += expense.price;
+            total += parseInt(expense.price);
         });
         setTotalExpenses(total);
     }
@@ -47,16 +56,16 @@ const Reports = () => {
                     <option value="" disabled>Select a month</option>
                     <option value="0">January</option>
                     <option value="1">February</option>
-                    <option value="3">March</option>
-                    <option value="4">April</option>
-                    <option value="5">May</option>
-                    <option value="6">June</option>
-                    <option value="7">July</option>
-                    <option value="8">August</option>
-                    <option value="9">September</option>
-                    <option value="10">October</option>
-                    <option value="11">November</option>
-                    <option value="12">December</option>
+                    <option value="2">March</option>
+                    <option value="3">April</option>
+                    <option value="4">May</option>
+                    <option value="5">June</option>
+                    <option value="6">July</option>
+                    <option value="7">August</option>
+                    <option value="8">September</option>
+                    <option value="9">October</option>
+                    <option value="10">November</option>
+                    <option value="11">December</option>
                     ...
                 </select>
             </div>
