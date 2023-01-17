@@ -19,11 +19,6 @@ const Reports = () => {
         console.log("change",expenses)
     },[expenses])
 
-    // // Filter the expenses by the selected year and month
-    // const filteredExpenses = expenses.filter(expense => {
-    //     const expenseDate = new Date(expense.date);
-    //     return expenseDate.getFullYear() === selectedYear && expenseDate.getMonth() === selectedMonth;
-    // });
 
     // Calculate the total expenses for the filtered expenses
     const calculateTotalExpenses = () => {
@@ -37,6 +32,13 @@ const Reports = () => {
         });
         setTotalExpenses(total);
     }
+    useEffect(()=>{
+        let total = 0;
+        filteredExpenses.forEach(expense => {
+            total += parseInt(expense.price);
+        });
+        setTotalExpenses(total);
+    },[filteredExpenses])
 
     return (
         <div>
