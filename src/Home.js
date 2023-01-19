@@ -16,7 +16,7 @@ const Home = () => {
     const [date, setDate] = useState('');
     const [item, setItem] = useState('');
     const [price, setPrice] = useState('');
-    const [category, setCategory] = useState('');
+    const [category, setCategory] = useState('food');
     const [description, setDescription] = useState('');
     const [inputs, setInputs] = useState([]);
     const [error, setError] = useState('');
