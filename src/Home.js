@@ -1,10 +1,12 @@
 import React from 'react';
 import './Home.css';
-import { useState ,useEffect} from 'react';
+import {useState, useEffect} from 'react';
 
 
 const Home = () => {
-
+    useEffect(() => {
+        document.title = 'Cost Manager';
+    }, []);
 
     useEffect(() => {
         const inputsFromLocalStorage = JSON.parse(localStorage.getItem('inputs'));
@@ -25,7 +27,6 @@ const Home = () => {
     const todayStr = today.toISOString().slice(0, 10);
 
 
-
     return (
         <div className="Home">
             <h1>Add your expense here</h1>
@@ -34,20 +35,21 @@ const Home = () => {
 
                 <div className="inputGroup">
                     <label htmlFor='name'>Date</label>
-                    <input type="date" value={date} onChange={e=>setDate(e.target.value)} required autoComplete={'off'} max={todayStr}/>
+                    <input type="date" value={date} onChange={e => setDate(e.target.value)} required
+                           autoComplete={'off'} max={todayStr}/>
                 </div>
 
                 <div className="inputGroup">
-                    <label>Item: </label><input type="text" value={item} onChange={e=>setItem(e.target.value)}/>
+                    <label>Item: </label><input type="text" value={item} onChange={e => setItem(e.target.value)}/>
                 </div>
 
                 <div className="inputGroup">
-                    <label>Price: </label><input type="number" value={price} onChange={e=>setPrice(e.target.value)}/>
+                    <label>Price: </label><input type="number" value={price} onChange={e => setPrice(e.target.value)}/>
                 </div>
 
                 <div className="inputGroup">
                     <label>Category:</label>
-                    <select value={category} onChange={e=>setCategory(e.target.value)}>
+                    <select value={category} onChange={e => setCategory(e.target.value)}>
                         <option value="food">Food</option>
                         <option value="personalSpending">Personal spending</option>
                         <option value="children">Children</option>
@@ -63,7 +65,8 @@ const Home = () => {
 
                 <div className="inputGroup">
                     <label>Description: </label>
-                    <textarea value={description} onChange={e=>setDescription(e.target.value)} placeholder="Enter description"></textarea>
+                    <textarea value={description} onChange={e => setDescription(e.target.value)}
+                              placeholder="Enter description"></textarea>
                 </div>
 
                 <div className="submit">
@@ -73,14 +76,21 @@ const Home = () => {
                             return;
                         }
                         setError('');
-                        setInputs([...inputs, { date, item, price, category, description }]);
-                        localStorage.setItem('inputs', JSON.stringify([...inputs, { date, item, price, category, description }]));
+                        setInputs([...inputs, {date, item, price, category, description}]);
+                        localStorage.setItem('inputs', JSON.stringify([...inputs, {
+                            date,
+                            item,
+                            price,
+                            category,
+                            description
+                        }]));
                         setDate(''); // Clear the date input
                         setItem(''); // Clear the item input
                         setPrice(''); // Clear the price input
                         setCategory('food'); // Reset the category to default
                         setDescription(''); // Clear the description input
-                    }}>Add cost</button>
+                    }}>Add cost
+                    </button>
                     {error && <p className="error">{error}</p>}
                 </div>
 

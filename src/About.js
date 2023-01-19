@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './About.css'
 import TeamMember from './TeamMember';
 import peleg from './peleg.jpg'
@@ -23,6 +23,9 @@ const teamMembers = [
 ];
 
 function AboutUs() {
+    useEffect(() => {
+        document.title = 'About Us';
+    }, []);
     return (
         <div className="about-us-container">
             <h1 className="about-us-text">About Our Project</h1>
