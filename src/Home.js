@@ -69,7 +69,7 @@ const Home = () => {
                               placeholder="Enter description"></textarea>
                 </div>
 
-                <div className="submit">
+                <div className="submit-cost">
                     <button className={"add-cost"} id="plus" onClick={() => {
                         if (!date || !item || !price) {
                             alert("please enter all field")
