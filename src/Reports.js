@@ -1,4 +1,5 @@
 import React, { useState , useEffect} from 'react';
+import './Reports.css'
 
 const Reports = () => {
     const [selectedYear, setSelectedYear] = useState('');
@@ -47,6 +48,8 @@ const Reports = () => {
                 <label>Year:</label>
                 <select value={selectedYear} onChange={e => setSelectedYear(e.target.value)}>
                     <option value="" disabled>Select a year</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
                     <option value="2021">2021</option>
                     <option value="2022">2022</option>
                     <option value="2023">2023</option>

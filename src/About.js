@@ -4,10 +4,13 @@ import TeamMember from './TeamMember';
 import peleg from './peleg.jpg'
 import eden from './eden.jpeg'
 import dudi from './dudi.jpeg'
+
+//array of 3 group members
+
 const teamMembers = [
     {
         name: 'Peleg Vadbeker',
-        role: 'Computer Science student - HIT and Air Force Intelligence Systems Specialist',
+        role: 'Computer Science student - HIT and System Administrator',
         picture: peleg
     },
     {
@@ -21,6 +24,11 @@ const teamMembers = [
         picture: dudi
     }
 ];
+
+//about us function tell us about the project and team members.
+//about us contain map function that iterates over the team members array and for each team member it creates a new "team Member" component
+//note : we have team member as objects and team Member component.
+
 
 function AboutUs() {
     return (
