@@ -25,9 +25,11 @@ const teamMembers = [
     }
 ];
 
-//about us function tell us about the project and team members.
-//about us contain map function that iterates over the team members array and for each team member it creates a new "team Member" component
-//note : we have team member as objects and team Member component.
+/*
+About us function tell us about the project and team members.
+about us contain map function that iterates over the team members array and for each team member it creates a new "team Member" component
+note : we have team member as objects and team Member component.
+*/
 
 
 function AboutUs() {
