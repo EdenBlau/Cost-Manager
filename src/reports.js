@@ -1,16 +1,28 @@
 import React, {useState, useEffect} from 'react';
 import './Reports.css';
 
+//page title
 const Reports = () => {
     useEffect(() => {
         document.title = 'Reports';
     }, []);
 
+    //state variables
     const [selectedYear, setSelectedYear] = useState('');
     const [selectedMonth, setSelectedMonth] = useState('');
-    const [expenses, setExpenses] = useState([]);
+    const [expenses, setExpenses] = useState([]); //expenses
     const [totalExpenses, setTotalExpenses] = useState(0);
     const [filteredExpenses, setFilteredExpenses] = useState([]);
+
+    //to show expense by category later
+    const categories = {};
+    filteredExpenses.forEach(expense => {
+        if (categories[expense.category]) {
+            categories[expense.category] += parseInt(expense.price);
+        } else {
+            categories[expense.category] = parseInt(expense.price);
+        }
+    });
 
     // Fetch the expenses from local storage
     useEffect(() => {
@@ -112,7 +124,13 @@ const Reports = () => {
             )}
             <div>
                 <p className="total-expenses">Total expenses for selected period: <span
-                    className="total-number">${totalExpenses}</span></p>
+                    className="total-number">{totalExpenses} ILS</span></p>
+            </div>
+            <div>
+                <p className="total-expenses">Expenses by category:</p>
+                {Object.keys(categories).map(category => (
+                    <p key={category}>{category}: {categories[category]} ILS</p>
+                ))}
             </div>
         </div>
     )
