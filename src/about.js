@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import './About.css'
-import TeamMember from './TeamMember';
+import TeamMember from './teamMember';
 import peleg from './peleg.jpg'
 import eden from './eden.jpeg'
 import dudi from './dudi.jpeg'

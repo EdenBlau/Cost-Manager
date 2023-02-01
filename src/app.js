@@ -1,8 +1,8 @@
-import Navbar from './Navbar';
-import Home from './Home';
-import About from './About';
-import Reports from "./Reports";
+import Navbar from './navbar';
+import Home from './home';
+import Reports from "./reports";
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import About from "./about";
 
 function App() {
     return (

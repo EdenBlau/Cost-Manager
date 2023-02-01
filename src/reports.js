@@ -10,7 +10,7 @@ const Reports = () => {
     const [selectedMonth, setSelectedMonth] = useState('');
     const [expenses, setExpenses] = useState([]);
     const [totalExpenses, setTotalExpenses] = useState(0);
-    const [filteredExpenses, setFilteredExpenses] = useState([])
+    const [filteredExpenses, setFilteredExpenses] = useState([]);
 
     // Fetch the expenses from local storage
     useEffect(() => {
@@ -21,8 +21,8 @@ const Reports = () => {
     }, []);
 
     useEffect(() => {
-        console.log("change", expenses)
-    }, [expenses])
+        console.log("change", expenses);
+    }, [expenses]);
 
 
     // Calculate the total expenses for the filtered expenses
@@ -48,7 +48,7 @@ const Reports = () => {
             total += parseInt(expense.price);
         });
         setTotalExpenses(total);
-    }, [filteredExpenses])
+    }, [filteredExpenses]);
 
     return (
         <div className="reports">
