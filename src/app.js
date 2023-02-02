@@ -1,3 +1,7 @@
+/* Peleg Vadbeker 209485838
+   Eden Blau 208571927
+   Dudi Kreis 311333900
+*/
 import Navbar from './navbar';
 import Home from './home';
 import Reports from "./reports";

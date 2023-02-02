@@ -1,3 +1,8 @@
+/* Peleg Vadbeker 209485838
+   Eden Blau 208571927
+   Dudi Kreis 311333900
+*/
+
 import React from 'react';
 import './Navbar.css';
 import AppLogo from './AppLogo.JPG';

@@ -1,8 +1,13 @@
+/* Peleg Vadbeker 209485838
+   Eden Blau 208571927
+   Dudi Kreis 311333900
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 * {
     margin: 0;
-    font-family: "Quicksand";
+    font-family: "Quicksand", serif;
     color: #333;
 }
 .content{

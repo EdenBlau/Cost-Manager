@@ -1,6 +1,11 @@
+/* Peleg Vadbeker 209485838
+   Eden Blau 208571927
+   Dudi Kreis 311333900
+*/
 import React from 'react';
 import './Home.css';
 import {useState, useEffect} from 'react';
+import LocalStorage from "./localStorage";
 
 
 const Home = () => {
@@ -11,7 +16,7 @@ const Home = () => {
 
     useEffect(() => {
         // This useEffect hook retrieves the inputs saved in local storage and sets them to the inputs state variable
-        const inputsFromLocalStorage = JSON.parse(localStorage.getItem('inputs'));
+        const inputsFromLocalStorage = LocalStorage.get('inputs');
         if (inputsFromLocalStorage) {
             setInputs(inputsFromLocalStorage);
         }
@@ -86,6 +91,7 @@ const Home = () => {
                         setPrice(''); // Clear the price input
                         setCategory('food'); // Reset the category to default
                         setDescription(''); // Clear the description input
+                        alert("Cost added successfully");
                     }}>Add cost
                     </button>
                     {error && <p className="error">{error}</p>}
@@ -120,7 +126,7 @@ const Home = () => {
                                 onClick={() => {
                                     inputs.splice(index, 1); // Remove the item from the inputs state variable
                                     setInputs([...inputs]); // Update the inputs state variable
-                                    localStorage.setItem('inputs', JSON.stringify(inputs)); // Update local storage
+                                    LocalStorage.set('inputs', inputs); // Update local storage
                                 }}
                             >
                                 Delete

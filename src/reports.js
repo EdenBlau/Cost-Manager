@@ -1,5 +1,10 @@
+/* Peleg Vadbeker 209485838
+   Eden Blau 208571927
+   Dudi Kreis 311333900
+*/
 import React, {useState, useEffect} from 'react';
 import './Reports.css';
+import LocalStorage from "./localStorage";
 
 //page title
 const Reports = () => {
@@ -26,7 +31,7 @@ const Reports = () => {
 
     // Fetch the expenses from local storage
     useEffect(() => {
-        const inputsFromLocalStorage = JSON.parse(localStorage.getItem('inputs'));
+        const inputsFromLocalStorage = LocalStorage.get('inputs');
         if (inputsFromLocalStorage) {
             setExpenses(inputsFromLocalStorage);
         }
@@ -65,7 +70,7 @@ const Reports = () => {
     return (
         <div className="reports">
             <h1 className="headline">Expense Report</h1>
-            <div class="select-container">
+            <div className="select-container">
                 <label className="label">Year</label>
                 <select className="select" value={selectedYear} onChange={e => setSelectedYear(e.target.value)}>
                     <option value="" disabled>Select a year</option>
@@ -76,7 +81,7 @@ const Reports = () => {
                     <option value="2023">2023</option>
                 </select>
             </div>
-            <div class="select-container">
+            <div className="select-container">
                 <label className="label">Month</label>
                 <select className="select" value={selectedMonth} onChange={e => setSelectedMonth(e.target.value)}>
                     <option value="" disabled>Select a month</option>
