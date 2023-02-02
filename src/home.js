@@ -4,17 +4,20 @@ import {useState, useEffect} from 'react';
 
 
 const Home = () => {
+    // This useEffect hook updates the document title to 'Cost Manager'
     useEffect(() => {
         document.title = 'Cost Manager';
     }, []);
 
     useEffect(() => {
+        // This useEffect hook retrieves the inputs saved in local storage and sets them to the inputs state variable
         const inputsFromLocalStorage = JSON.parse(localStorage.getItem('inputs'));
         if (inputsFromLocalStorage) {
             setInputs(inputsFromLocalStorage);
         }
     }, []);
 
+    // These state variables are used to store the values of the inputs
     const [date, setDate] = useState('');
     const [item, setItem] = useState('');
     const [price, setPrice] = useState('');
@@ -23,6 +26,7 @@ const Home = () => {
     const [inputs, setInputs] = useState([]);
     const [error, setError] = useState('');
 
+    // This function is called when the user clicks the add cost button
     const today = new Date();
     const todayStr = today.toISOString().slice(0, 10);
 
@@ -31,22 +35,17 @@ const Home = () => {
         <div className="Home">
             <h1>Add your expense here</h1>
             <div className="form-container">
-
-
                 <div className="inputGroup">
-                    <label htmlFor='name'>Date</label>
+                    <label htmlFor='name'>Date:</label>
                     <input type="date" value={date} onChange={e => setDate(e.target.value)} required
                            autoComplete={'off'} max={todayStr}/>
                 </div>
-
                 <div className="inputGroup">
                     <label>Item: </label><input type="text" value={item} onChange={e => setItem(e.target.value)}/>
                 </div>
-
                 <div className="inputGroup">
                     <label>Price: </label><input type="number" value={price} onChange={e => setPrice(e.target.value)}/>
                 </div>
-
                 <div className="inputGroup">
                     <label>Category:</label>
                     <select value={category} onChange={e => setCategory(e.target.value)}>
@@ -62,22 +61,20 @@ const Home = () => {
                         <option value="others">Others</option>
                     </select>
                 </div>
-
                 <div className="inputGroup">
                     <label>Description: </label>
                     <textarea value={description} onChange={e => setDescription(e.target.value)}
                               placeholder="Enter description"></textarea>
                 </div>
-
                 <div className="submit-cost">
                     <button className={"add-cost"} id="plus" onClick={() => {
-                        if (!date || !item || !price) {
+                        if (!date || !item || !price) { // If any of the inputs are empty, display an error message
                             alert("please enter all field")
                             return;
                         }
                         setError('');
-                        setInputs([...inputs, {date, item, price, category, description}]);
-                        localStorage.setItem('inputs', JSON.stringify([...inputs, {
+                        setInputs([...inputs, {date, item, price, category, description}]); // Add the new input to the inputs state variable
+                        localStorage.setItem('inputs', JSON.stringify([...inputs, { // Add the new input to local storage
                             date,
                             item,
                             price,
@@ -110,7 +107,7 @@ const Home = () => {
                 </tr>
                 </thead>
                 <tbody>
-                {inputs.map((input, index) => (
+                {inputs.map((input, index) => ( // Map over the inputs state variable
                     <tr key={index}>
                         <td>{input.date}</td>
                         <td>{input.item}</td>
@@ -121,9 +118,9 @@ const Home = () => {
                             <button
                                 className={'delete-button'}
                                 onClick={() => {
-                                    inputs.splice(index, 1);
-                                    setInputs([...inputs]);
-                                    localStorage.setItem('inputs', JSON.stringify(inputs));
+                                    inputs.splice(index, 1); // Remove the item from the inputs state variable
+                                    setInputs([...inputs]); // Update the inputs state variable
+                                    localStorage.setItem('inputs', JSON.stringify(inputs)); // Update local storage
                                 }}
                             >
                                 Delete
