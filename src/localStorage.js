@@ -7,8 +7,8 @@ const LocalStorage = {
         return JSON.parse(localStorage.getItem(key));
     },
 
-    set: (key, value) => {
-        localStorage.setItem(key, JSON.stringify(value));
+    set: async (key, value) => {
+        await localStorage.setItem(key, JSON.stringify(value));
     }
 };
 
