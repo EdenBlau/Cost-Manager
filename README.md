@@ -21,4 +21,4 @@ The items you entered will appear in the table below, you also have the option t
 
 * about + meet the team page screenshot:
 
-![ללא שם](https://user-images.githubusercontent.com/104712912/216679017-13cd7468-0dc9-442d-8b18-996007fb96c2.png)
+<img width="766" alt="image" src="https://github.com/EdenBlau/Cost-Manager/assets/84456928/26f33c48-8160-4ddb-a67a-29f93a0b8fd9">
