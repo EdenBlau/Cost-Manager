@@ -17,7 +17,7 @@ The items you entered will appear in the table below, you also have the option t
 
 * report page screenshot: 
 
-![ללא שם](https://user-images.githubusercontent.com/104712912/216678616-d5d99fc6-74b2-46b3-94d8-55501d926660.png)
+<img width="761" alt="image" src="https://github.com/EdenBlau/Cost-Manager/assets/84456928/9765d9aa-9780-43bb-adbb-bfb3a872f504">
 
 * about + meet the team page screenshot:
 
