@@ -1,5 +1,5 @@
 # Cost-Manager
-cost manager app using HTML , CSS ,REACT.JS
+cost manager app using HTML, CSS, JavaScript and REACT
 
 Data saved in Local storage
 
