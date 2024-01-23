@@ -13,7 +13,7 @@ The items you entered will appear in the table below, you also have the option t
 
 * home page screeshot:
 
-![ללא שם](https://user-images.githubusercontent.com/104712912/216678226-066c415c-2b20-4c23-9cf8-78d8d4339d5d.png)
+<img width="752" alt="image" src="https://github.com/EdenBlau/Cost-Manager/assets/84456928/43af5354-2c71-4810-9dce-7aa64c5c2b64">
 
 * report page screenshot: 
 
